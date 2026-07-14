@@ -3,16 +3,158 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Personal portfolio website" />
-    <title>Portfolio</title>
+    <meta name="description" content="The personal portfolio of Your Name." />
+    <title>Your Name | Portfolio</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
-    <!-- Planned website sections: Navbar, Hero, About, Skills, Projects, Contact, Footer -->
+    <header class="site-header" id="top">
+      <nav class="navbar container" aria-label="Primary navigation">
+        <a class="navbar__brand" href="#top" aria-label="Your Name home">Your Name</a>
+
+        <ul class="navbar__links" role="list">
+          <li><a class="navbar__link" href="#about">About</a></li>
+          <li><a class="navbar__link" href="#skills">Skills</a></li>
+          <li><a class="navbar__link" href="#projects">Projects</a></li>
+          <li><a class="navbar__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <main>
-      <!-- Content will be added after approval. -->
+      <section class="hero section" id="hero" aria-labelledby="hero-title">
+        <div class="hero__content container">
+          <div class="hero__copy">
+            <p class="eyebrow">Frontend Developer</p>
+            <h1 id="hero-title">Building thoughtful digital experiences.</h1>
+            <p class="hero__description">
+              I am Your Name, a developer focused on creating clear, useful, and polished web experiences.
+            </p>
+            <div class="hero__actions">
+              <a class="button" href="#projects">View my work</a>
+              <a class="button button--secondary" href="#contact">Get in touch</a>
+            </div>
+          </div>
+          <div class="hero__visual" aria-label="Profile image placeholder" role="img">
+            <span>Profile image</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section" id="about" aria-labelledby="about-title">
+        <div class="about__content container">
+          <div class="section-heading">
+            <p class="eyebrow">About me</p>
+            <h2 id="about-title">A developer who enjoys solving meaningful problems.</h2>
+          </div>
+          <div class="about__text">
+            <p>
+              Use this space to introduce your professional background, strengths, and the kind of work you enjoy doing.
+            </p>
+            <p>
+              Share a concise overview that helps visitors understand your approach and the value you bring to projects.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills section" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Skills</p>
+            <h2 id="skills-title">Tools I use to bring ideas to life.</h2>
+          </div>
+          <ul class="skills__grid" role="list">
+            <li class="skill-card">HTML5</li>
+            <li class="skill-card">CSS3</li>
+            <li class="skill-card">JavaScript</li>
+            <li class="skill-card">Responsive Design</li>
+            <li class="skill-card">Git &amp; GitHub</li>
+            <li class="skill-card">UI Implementation</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="projects section" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <div class="section-heading section-heading--split">
+            <div>
+              <p class="eyebrow">Projects</p>
+              <h2 id="projects-title">Selected work.</h2>
+            </div>
+            <a class="text-link" href="#contact">Discuss a project</a>
+          </div>
+          <div class="projects__grid">
+            <article class="project-card">
+              <div class="project-card__image" aria-label="Project one image placeholder" role="img">Project image</div>
+              <div class="project-card__content">
+                <p class="project-card__type">Web Application</p>
+                <h3>Project One</h3>
+                <p>A brief description of the problem, solution, and contribution for this project.</p>
+                <a class="text-link" href="#" aria-label="View Project One">View project</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card__image" aria-label="Project two image placeholder" role="img">Project image</div>
+              <div class="project-card__content">
+                <p class="project-card__type">Portfolio Website</p>
+                <h3>Project Two</h3>
+                <p>A brief description of the problem, solution, and contribution for this project.</p>
+                <a class="text-link" href="#" aria-label="View Project Two">View project</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card__image" aria-label="Project three image placeholder" role="img">Project image</div>
+              <div class="project-card__content">
+                <p class="project-card__type">Landing Page</p>
+                <h3>Project Three</h3>
+                <p>A brief description of the problem, solution, and contribution for this project.</p>
+                <a class="text-link" href="#" aria-label="View Project Three">View project</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact" aria-labelledby="contact-title">
+        <div class="contact__content container">
+          <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">Let’s work together.</h2>
+            <p>Have a project or opportunity in mind? Send a message and I’ll get back to you.</p>
+          </div>
+          <form class="contact-form" action="#" method="post">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button class="button" type="submit">Send message</button>
+          </form>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__content container">
+        <p>&copy; 2026 Your Name. All rights reserved.</p>
+        <ul class="site-footer__links" role="list">
+          <li><a href="#top">Back to top</a></li>
+          <li><a href="#" aria-label="Visit Your Name on GitHub">GitHub</a></li>
+          <li><a href="#" aria-label="Visit Your Name on LinkedIn">LinkedIn</a></li>
+        </ul>
+      </div>
+    </footer>
 
     <script src="js/script.js"></script>
   </body>
