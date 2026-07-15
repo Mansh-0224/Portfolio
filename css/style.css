@@ -161,31 +161,209 @@ h3 {
 }
 
 /* ==================== Hero ==================== */
+.hero {
+  --hero-ink: #13233b;
+  --hero-muted: #607086;
+  --hero-accent: #d8683a;
+  --hero-accent-dark: #b84f27;
+  --hero-wash: #f5f7fb;
+  --hero-serif: "Playfair Display", Georgia, serif;
+  --hero-sans: "DM Sans", Arial, sans-serif;
+
+  overflow: hidden;
+  padding-block: 6.5rem;
+  background: linear-gradient(115deg, #ffffff 0%, #ffffff 58%, #f7f3ee 100%);
+  font-family: var(--hero-sans);
+}
+
 .hero__content {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(21rem, 0.85fr);
   align-items: center;
-  gap: var(--space-6);
-  min-height: 34rem;
+  gap: clamp(3rem, 7vw, 7rem);
+  min-height: 35rem;
 }
 
 .hero__copy > * + * {
-  margin-top: var(--space-3);
+  margin-top: 1.75rem;
+}
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--hero-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.hero__eyebrow span {
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 50%;
+  background-color: var(--hero-accent);
+}
+
+.hero h1 {
+  max-width: 13ch;
+  color: var(--hero-ink);
+  font-family: var(--hero-serif);
+  font-size: clamp(3.6rem, 5.3vw, 5.7rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+}
+
+.hero h1 em {
+  color: var(--hero-accent);
+  font-weight: inherit;
 }
 
 .hero__description {
-  max-width: 36rem;
-  color: var(--color-muted);
-  font-size: 1.125rem;
+  max-width: 34rem;
+  color: var(--hero-muted);
+  font-size: 1.1rem;
+  line-height: 1.75;
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2);
+  gap: 0.85rem;
 }
 
-.hero__visual,
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 3.2rem;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.hero__button:hover {
+  transform: translateY(-3px);
+}
+
+.hero__button--primary {
+  background-color: var(--hero-ink);
+  color: #ffffff;
+}
+
+.hero__button--primary:hover {
+  background-color: var(--hero-accent-dark);
+}
+
+.hero__button--secondary {
+  border-color: #ced5df;
+  color: var(--hero-ink);
+}
+
+.hero__button--secondary:hover {
+  border-color: var(--hero-ink);
+  background-color: #ffffff;
+}
+
+.hero__socials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero__socials a {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid #d7dee8;
+  border-radius: 50%;
+  color: var(--hero-ink);
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.hero__socials svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.hero__socials a:hover {
+  border-color: var(--hero-accent);
+  background-color: var(--hero-accent);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.hero__visual {
+  position: relative;
+  display: grid;
+  min-height: 30rem;
+  place-items: center;
+  isolation: isolate;
+}
+
+.hero__visual::before,
+.hero__visual::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+}
+
+.hero__visual::before {
+  width: min(100%, 24rem);
+  aspect-ratio: 1;
+  border-radius: 48% 52% 44% 56% / 56% 45% 55% 44%;
+  background-color: #e8d4c5;
+  transform: rotate(-9deg);
+}
+
+.hero__visual::after {
+  right: 3%;
+  bottom: 8%;
+  width: 7rem;
+  height: 7rem;
+  border: 1px solid #d6a88d;
+  border-radius: 50%;
+}
+
+.hero__portrait {
+  display: grid;
+  width: min(76%, 18rem);
+  aspect-ratio: 0.84;
+  place-items: center;
+  border: 9px solid #ffffff;
+  border-radius: 9rem 9rem 1.25rem 1.25rem;
+  background: linear-gradient(145deg, #2d4c67, #15283f);
+  box-shadow: 0 1.5rem 3.5rem rgb(19 35 59 / 18%);
+  color: #ffffff;
+}
+
+.hero__portrait span {
+  font-family: var(--hero-serif);
+  font-size: 4.5rem;
+  letter-spacing: -0.09em;
+}
+
+.hero__portrait-label {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0;
+  padding: 0.45rem 0.7rem;
+  background-color: #ffffff;
+  color: var(--hero-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 .project-card__image {
   display: grid;
   min-height: 20rem;

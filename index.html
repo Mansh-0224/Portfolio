@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="The personal portfolio of Your Name." />
     <title>Your Name | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
@@ -26,18 +29,38 @@
       <section class="hero section" id="hero" aria-labelledby="hero-title">
         <div class="hero__content container">
           <div class="hero__copy">
-            <p class="eyebrow">Frontend Developer</p>
-            <h1 id="hero-title">Building thoughtful digital experiences.</h1>
+            <p class="hero__eyebrow">Frontend Developer <span aria-hidden="true"></span> Available for work</p>
+            <h1 id="hero-title">Thoughtful digital experiences, <em>built to matter.</em></h1>
             <p class="hero__description">
               I am Your Name, a developer focused on creating clear, useful, and polished web experiences.
             </p>
             <div class="hero__actions">
-              <a class="button" href="#projects">View my work</a>
-              <a class="button button--secondary" href="#contact">Get in touch</a>
+              <a class="hero__button hero__button--primary" href="#projects">View my work <span aria-hidden="true">↗</span></a>
+              <a class="hero__button hero__button--secondary" href="#contact">Get in touch</a>
             </div>
+            <ul class="hero__socials" role="list" aria-label="Social media links">
+              <li>
+                <a href="#" aria-label="Visit Your Name on GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.2-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.13.64-1.39-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 6.2c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.95-2.35 4.81-4.58 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.24 10.24 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-label="Visit Your Name on LinkedIn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 3H3.55C3.25 3 3 3.25 3 3.55v16.9c0 .3.25.55.55.55h16.9c.3 0 .55-.25.55-.55V3.55c0-.3-.25-.55-.55-.55ZM8.34 18.34H5.67v-8.59h2.67v8.59ZM7 8.58a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1Zm11.35 9.76h-2.67v-4.18c0-1 0-2.29-1.4-2.29-1.4 0-1.61 1.08-1.61 2.21v4.26H10v-8.59h2.56v1.17h.04c.36-.68 1.23-1.4 2.53-1.4 2.7 0 3.2 1.78 3.2 4.09v4.73h.02Z" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:hello@example.com" aria-label="Email Your Name">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z" /></svg>
+                </a>
+              </li>
+            </ul>
           </div>
           <div class="hero__visual" aria-label="Profile image placeholder" role="img">
-            <span>Profile image</span>
+            <div class="hero__portrait">
+              <span>YN</span>
+            </div>
+            <span class="hero__portrait-label">Your profile photo</span>
           </div>
         </div>
       </section>
