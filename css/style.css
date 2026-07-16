@@ -9,6 +9,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 body,
 h1,
 h2,
@@ -75,11 +79,11 @@ h3 {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 2.25rem;
 }
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 1.875rem;
 }
 
 h3 {
@@ -88,12 +92,12 @@ h3 {
 
 /* ==================== Shared Layout ==================== */
 .container {
-  width: min(100% - 4rem, var(--container-width));
+  width: min(100% - 2rem, var(--container-width));
   margin-inline: auto;
 }
 
 .section {
-  padding-block: var(--space-6);
+  padding-block: 3.5rem;
 }
 
 .section-heading {
@@ -143,9 +147,11 @@ h3 {
 
 .navbar {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  min-height: 4.5rem;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
 }
 
 .navbar__brand {
@@ -157,6 +163,8 @@ h3 {
 .site-footer__links {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: var(--space-3);
 }
 
@@ -171,17 +179,17 @@ h3 {
   --hero-sans: "DM Sans", Arial, sans-serif;
 
   overflow: hidden;
-  padding-block: 6.5rem;
+  padding-block: 3.75rem;
   background: linear-gradient(115deg, #ffffff 0%, #ffffff 58%, #f7f3ee 100%);
   font-family: var(--hero-sans);
 }
 
 .hero__content {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(21rem, 0.85fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
-  gap: clamp(3rem, 7vw, 7rem);
-  min-height: 35rem;
+  gap: 3rem;
+  min-height: auto;
 }
 
 .hero__copy > * + * {
@@ -210,7 +218,7 @@ h3 {
   max-width: 13ch;
   color: var(--hero-ink);
   font-family: var(--hero-serif);
-  font-size: clamp(3.6rem, 5.3vw, 5.7rem);
+  font-size: clamp(2.9rem, 13vw, 4.25rem);
   font-weight: 600;
   letter-spacing: -0.06em;
   line-height: 0.98;
@@ -224,7 +232,7 @@ h3 {
 .hero__description {
   max-width: 34rem;
   color: var(--hero-muted);
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.75;
 }
 
@@ -304,7 +312,7 @@ h3 {
 .hero__visual {
   position: relative;
   display: grid;
-  min-height: 30rem;
+  min-height: 20rem;
   place-items: center;
   isolation: isolate;
 }
@@ -317,7 +325,7 @@ h3 {
 }
 
 .hero__visual::before {
-  width: min(100%, 24rem);
+  width: min(82vw, 18rem);
   aspect-ratio: 1;
   border-radius: 48% 52% 44% 56% / 56% 45% 55% 44%;
   background-color: #e8d4c5;
@@ -335,10 +343,10 @@ h3 {
 
 .hero__portrait {
   display: grid;
-  width: min(76%, 18rem);
+  width: min(62vw, 14rem);
   aspect-ratio: 0.84;
   place-items: center;
-  border: 9px solid #ffffff;
+  border: 7px solid #ffffff;
   border-radius: 9rem 9rem 1.25rem 1.25rem;
   background: linear-gradient(145deg, #2d4c67, #15283f);
   box-shadow: 0 1.5rem 3.5rem rgb(19 35 59 / 18%);
@@ -347,7 +355,7 @@ h3 {
 
 .hero__portrait span {
   font-family: var(--hero-serif);
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   letter-spacing: -0.09em;
 }
 
@@ -381,8 +389,8 @@ h3 {
 
 .about__content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-6);
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
 }
 
 .about__text {
@@ -396,7 +404,7 @@ h3 {
 /* ==================== Skills ==================== */
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-2);
   margin-top: var(--space-4);
 }
@@ -411,7 +419,8 @@ h3 {
 /* ==================== Projects ==================== */
 .section-heading--split {
   display: flex;
-  align-items: end;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   max-width: none;
   gap: var(--space-3);
@@ -419,7 +428,7 @@ h3 {
 
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-3);
   margin-top: var(--space-4);
 }
@@ -463,8 +472,8 @@ h3 {
 
 .contact__content {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: var(--space-6);
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
 }
 
 .contact-form {
@@ -502,9 +511,11 @@ h3 {
 
 .site-footer__content {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3);
+  text-align: center;
   color: var(--color-muted);
   font-size: 0.875rem;
 }
