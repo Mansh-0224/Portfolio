@@ -40,7 +40,7 @@ Open `index.html` in a browser. Styling and interactive behavior have intentiona
 After creating a GitHub repository, connect and push this project:
 
 ```bash
-git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+git remote add origin https://github.com/Mansh-0224/Portfolio.git
 git branch -M main
 git add .
 git commit -m "Initial portfolio project setup"
