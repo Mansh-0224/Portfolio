@@ -17,7 +17,17 @@
       <nav class="navbar container" aria-label="Primary navigation">
         <a class="navbar__brand" href="#top" aria-label="Manvi Sharma home">Manvi<span>_Sharma</span></a>
 
-        <ul class="navbar__links" role="list">
+        <div class="navbar__controls">
+          <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+            <span class="theme-toggle__icon" aria-hidden="true">◐</span>
+          </button>
+          <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+            <span class="nav-toggle__label">Menu</span>
+            <span class="nav-toggle__icon" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <ul class="navbar__links" id="primary-navigation" role="list">
           <li><a class="navbar__link" href="#about">About</a></li>
           <li><a class="navbar__link" href="#skills">Skills</a></li>
           <li><a class="navbar__link" href="#projects">Projects</a></li>
@@ -179,6 +189,10 @@
         </ul>
       </div>
     </footer>
+
+    <button class="scroll-top" type="button" aria-label="Scroll back to the top">
+      <span aria-hidden="true">↑</span>
+    </button>
 
     <script src="js/script.js"></script>
   </body>

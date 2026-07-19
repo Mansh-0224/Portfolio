@@ -1113,3 +1113,256 @@ body {
   border-color: rgb(97 234 255 / 24%);
   background: #040510;
 }
+
+/* =====================================================================
+   JavaScript Interaction Styles
+   Supporting styles for the behaviors in js/script.js: mobile nav
+   toggle, active link state, scroll-to-top button, sticky header
+   state, and the dark/light theme toggle.
+   ===================================================================== */
+
+/* ----- Navbar layout controls ----- */
+.navbar__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ----- Mobile navigation toggle (hamburger button) ----- */
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.nav-toggle__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Three-line hamburger icon built from a span + its pseudo-elements. */
+.nav-toggle__icon,
+.nav-toggle__icon::before,
+.nav-toggle__icon::after {
+  display: block;
+  width: 1.1rem;
+  height: 2px;
+  background-color: currentColor;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.nav-toggle__icon {
+  position: relative;
+}
+
+.nav-toggle__icon::before,
+.nav-toggle__icon::after {
+  position: absolute;
+  left: 0;
+  content: "";
+}
+
+.nav-toggle__icon::before {
+  top: -0.35rem;
+}
+
+.nav-toggle__icon::after {
+  top: 0.35rem;
+}
+
+/* Morph the hamburger into an "X" while the menu is open. */
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon {
+  background-color: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Collapsed menu by default on small screens. */
+.navbar__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 250ms ease;
+}
+
+.navbar__links.is-open {
+  max-height: 20rem;
+}
+
+/* Prevent background scroll while the mobile menu is open. */
+body.nav-open {
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .navbar__links {
+    flex-direction: row;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+/* ----- Active navigation link ----- */
+.navbar__link {
+  position: relative;
+}
+
+.navbar__link.is-active {
+  color: var(--color-accent);
+}
+
+.navbar__link.is-active::after {
+  position: absolute;
+  bottom: -0.35rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  content: "";
+}
+
+/* ----- Theme toggle button ----- */
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.theme-toggle__icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ----- Sticky header elevated state ----- */
+.site-header.is-scrolled {
+  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 25%);
+}
+
+/* ----- Scroll-to-top button ----- */
+.scroll-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: 50%;
+  color: var(--color-surface);
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition: opacity 200ms ease, transform 200ms ease;
+  pointer-events: none;
+}
+
+.scroll-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* =====================================================================
+   Light Theme Override
+   Applied when js/script.js sets data-theme="light" on <html>.
+   Overrides the core design tokens; dark ("cybersecurity/HUD") mode
+   remains the default look defined earlier in this file.
+   ===================================================================== */
+:root[data-theme="light"] {
+  --color-text: #1f2933;
+  --color-muted: #5f6c7b;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f5f7fa;
+  --color-border: #d9e2ec;
+  --color-accent: #2f7a52;
+}
+
+:root[data-theme="light"] body {
+  background: var(--color-surface);
+  background-image: none;
+}
+
+:root[data-theme="light"] .site-header {
+  background: rgb(255 255 255 / 92%);
+  border-bottom-color: var(--color-border);
+}
+
+:root[data-theme="light"] .hero {
+  --hero-ink: #13233b;
+  --hero-muted: #5f6c7b;
+  --hero-accent: #2f7a52;
+  --hero-accent-dark: #1f5b3b;
+
+  background: #ffffff;
+  background-image: none;
+}
+
+:root[data-theme="light"] .hero::before,
+:root[data-theme="light"] .hero::after {
+  content: none;
+}
+
+:root[data-theme="light"] .hero__portrait {
+  background: linear-gradient(145deg, #2d4c67, #15283f);
+  box-shadow: 0 1.5rem 3.5rem rgb(19 35 59 / 18%);
+}
+
+:root[data-theme="light"] .about,
+:root[data-theme="light"] .contact {
+  background: var(--color-surface-subtle);
+  background-image: none;
+}
+
+:root[data-theme="light"] .skill-card,
+:root[data-theme="light"] .project-card {
+  background: var(--color-surface);
+  box-shadow: none;
+}
+
+:root[data-theme="light"] .project-card__image {
+  background: var(--color-surface-subtle);
+}
+
+:root[data-theme="light"] .form-field input,
+:root[data-theme="light"] .form-field textarea {
+  background: var(--color-surface);
+}
+
+:root[data-theme="light"] .site-footer {
+  background: var(--color-surface);
+}
