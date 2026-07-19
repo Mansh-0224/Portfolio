@@ -1366,3 +1366,197 @@ body.nav-open {
 :root[data-theme="light"] .site-footer {
   background: var(--color-surface);
 }
+
+/* =====================================================================
+   Polish Pass — Project Cards, Contact Form, Consistency
+   ===================================================================== */
+
+/* ----- Global accessibility & motion baseline ----- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.card-button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 0.15rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ----- Project card layout & spacing ----- */
+.project-card__content {
+  gap: var(--space-2);
+  padding: var(--space-3);
+}
+
+.project-card__content h3 {
+  margin-top: -0.15rem;
+}
+
+.project-card__content > p:not(.project-card__type) {
+  margin-bottom: 0.1rem;
+}
+
+/* Slight lift + accent glow on the placeholder image when the card is hovered. */
+.project-card__image {
+  transition: background-color 200ms ease;
+}
+
+/* ----- Technology tag list ----- */
+.project-card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-card__tech li {
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-muted);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* ----- Card action buttons (GitHub / Live Demo) ----- */
+.project-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+
+.card-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+  color: var(--color-text);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.card-button svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.card-button--github:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  transform: translateY(-2px);
+}
+
+.card-button--demo {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.card-button--demo:hover {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  transform: translateY(-2px);
+}
+
+/* Disabled state for projects without a public repo / hosted demo yet. */
+.card-button.is-disabled {
+  border-color: var(--color-border);
+  color: var(--color-muted);
+  background-color: transparent;
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none !important;
+}
+
+/* ----- Contact form polish ----- */
+.contact-form {
+  gap: var(--space-3);
+  max-width: 34rem;
+}
+
+.form-field label {
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea {
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+/* Accessible way to hide the honeypot field from sighted users and
+   screen readers alike, without using display:none (which some bots
+   detect and route around). */
+.form-field--honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contact-form .button {
+  justify-self: start;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease, opacity 180ms ease;
+}
+
+.contact-form .button:hover:not([disabled]) {
+  transform: translateY(-2px);
+}
+
+.contact-form .button[disabled] {
+  cursor: progress;
+  opacity: 0.7;
+  transform: none;
+}
+
+.form-status {
+  min-height: 1.25rem;
+  margin: 0;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+}
+
+.form-status--success {
+  color: #2f9e5c;
+}
+
+.form-status--error {
+  color: #e0554f;
+}
+
+/* ----- Light theme additions for new components ----- */
+:root[data-theme="light"] .project-card__tech li {
+  background-color: var(--color-surface-subtle);
+}
+
+:root[data-theme="light"] .card-button--github:hover,
+:root[data-theme="light"] .card-button--demo:hover {
+  color: #ffffff;
+}

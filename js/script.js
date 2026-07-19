@@ -270,4 +270,80 @@ document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   })();
+
+  /* =================================================================
+     7. CONTACT FORM — FORMSPREE SUBMISSION
+     Submits the contact form to Formspree via fetch() so the person
+     never leaves the page; a status message reports success/failure.
+     Requires the form's `action` attribute in index.html to point at
+     a real Formspree endpoint (https://formspree.io/f/YOUR_FORM_ID).
+     ================================================================= */
+  const ContactForm = (() => {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    const statusEl = document.getElementById('form-status');
+
+    const setStatus = (message, variant) => {
+      if (!statusEl) return;
+      statusEl.textContent = message;
+      statusEl.classList.remove('form-status--success', 'form-status--error');
+      if (variant) statusEl.classList.add(`form-status--${variant}`);
+    };
+
+    const setSubmitting = (isSubmitting) => {
+      if (!submitButton) return;
+      submitButton.disabled = isSubmitting;
+      submitButton.textContent = isSubmitting ? 'Sending…' : 'Send message';
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      // Honeypot check: if the hidden field got filled in, silently
+      // pretend to succeed rather than telling a bot why it failed.
+      const honeypot = form.querySelector('input[name="_gotcha"]');
+      if (honeypot && honeypot.value) {
+        form.reset();
+        setStatus('Thanks — your message has been sent.', 'success');
+        return;
+      }
+
+      // Guard against a placeholder Formspree endpoint that hasn't
+      // been configured yet, so the failure is easy to diagnose.
+      const endpoint = form.getAttribute('action') || '';
+      if (!endpoint.includes('formspree.io/f/') || endpoint.includes('YOUR_FORM_ID')) {
+        setStatus('Contact form is not connected yet — set your Formspree form ID in index.html.', 'error');
+        return;
+      }
+
+      setSubmitting(true);
+      setStatus('Sending your message…');
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+
+        if (response.ok) {
+          form.reset();
+          setStatus('Thanks — your message has been sent. I will get back to you soon.', 'success');
+        } else {
+          const data = await response.json().catch(() => null);
+          const errorMessage =
+            data && Array.isArray(data.errors) && data.errors.length
+              ? data.errors.map((error) => error.message).join(', ')
+              : 'Something went wrong. Please try again or email me directly.';
+          setStatus(errorMessage, 'error');
+        }
+      } catch (error) {
+        setStatus('Network error — please check your connection and try again.', 'error');
+      } finally {
+        setSubmitting(false);
+      }
+    });
+  })();
 });

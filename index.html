@@ -121,32 +121,86 @@
           </div>
           <div class="projects__grid">
             <article class="project-card">
-              <div class="project-card__image" aria-label="Secure file sharing project placeholder" role="img"><span>01</span><strong>SECURE<br />SHARE</strong></div>
+              <div class="project-card__image" aria-label="Secure file sharing project placeholder" role="img">
+                <span class="project-card__index">01</span>
+                <strong>SECURE<br />SHARE</strong>
+              </div>
               <div class="project-card__content">
                 <p class="project-card__type">Secure Web Application</p>
                 <h3>Secure File Sharing System</h3>
                 <p>A hands-on full-stack security project using JWT authentication, role-based access control, AES-256 encryption, AWS S3, and AWS EC2.</p>
-                <a class="text-link" href="https://github.com/Mansh-0224/simple-secure-share" target="_blank" rel="noreferrer">View on GitHub &rarr;</a>
+                <ul class="project-card__tech" role="list" aria-label="Technologies used">
+                  <li>JWT</li>
+                  <li>RBAC</li>
+                  <li>AES-256</li>
+                  <li>AWS S3</li>
+                  <li>AWS EC2</li>
+                </ul>
+                <div class="project-card__actions">
+                  <a class="card-button card-button--github" href="https://github.com/Mansh-0224/simple-secure-share" target="_blank" rel="noreferrer">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.2-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.13.64-1.39-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 6.2c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.95-2.35 4.81-4.58 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.24 10.24 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z" /></svg>
+                    GitHub
+                  </a>
+                  <span class="card-button card-button--demo is-disabled" aria-disabled="true" title="No live demo yet — the API and infrastructure aren't publicly hosted.">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
+                    Live Demo
+                  </span>
+                </div>
               </div>
             </article>
 
             <article class="project-card">
-              <div class="project-card__image" aria-label="Security project placeholder" role="img"><span>02</span><strong>THREAT<br />LAB</strong></div>
+              <div class="project-card__image" aria-label="Security project placeholder" role="img">
+                <span class="project-card__index">02</span>
+                <strong>THREAT<br />LAB</strong>
+              </div>
               <div class="project-card__content">
                 <p class="project-card__type">Security Research</p>
                 <h3>Network Security Lab</h3>
                 <p>A learning space for documenting network analysis, vulnerability assessment, and defensive security experiments.</p>
-                <a class="text-link" href="#" aria-label="View Project Two">View project</a>
+                <ul class="project-card__tech" role="list" aria-label="Technologies used">
+                  <li>Nmap</li>
+                  <li>Wireshark</li>
+                  <li>Burp Suite</li>
+                  <li>Kali Linux</li>
+                </ul>
+                <div class="project-card__actions">
+                  <span class="card-button card-button--github is-disabled" aria-disabled="true" title="Write-up not published yet.">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.2-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.13.64-1.39-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 6.2c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.95-2.35 4.81-4.58 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.24 10.24 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z" /></svg>
+                    GitHub
+                  </span>
+                  <span class="card-button card-button--demo is-disabled" aria-disabled="true" title="This is a research log, not a hosted application.">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
+                    Live Demo
+                  </span>
+                </div>
               </div>
             </article>
 
             <article class="project-card">
-              <div class="project-card__image" aria-label="Cloud security project placeholder" role="img"><span>03</span><strong>CLOUD<br />SECURE</strong></div>
+              <div class="project-card__image" aria-label="Cloud security project placeholder" role="img">
+                <span class="project-card__index">03</span>
+                <strong>CLOUD<br />SECURE</strong>
+              </div>
               <div class="project-card__content">
                 <p class="project-card__type">Cloud Security</p>
                 <h3>AWS Security Practice</h3>
                 <p>A learning space for cloud security practice covering IAM, secure storage, and resilient infrastructure patterns.</p>
-                <a class="text-link" href="#" aria-label="View Project Three">View project</a>
+                <ul class="project-card__tech" role="list" aria-label="Technologies used">
+                  <li>AWS IAM</li>
+                  <li>AWS S3</li>
+                  <li>AWS EC2</li>
+                </ul>
+                <div class="project-card__actions">
+                  <span class="card-button card-button--github is-disabled" aria-disabled="true" title="Write-up not published yet.">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.24c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.2-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.13.64-1.39-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05A9.28 9.28 0 0 1 12 6.2c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.95-2.35 4.81-4.58 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.24 10.24 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z" /></svg>
+                    GitHub
+                  </span>
+                  <span class="card-button card-button--demo is-disabled" aria-disabled="true" title="No live demo yet — this is a sandbox practice project.">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3ZM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
+                    Live Demo
+                  </span>
+                </div>
               </div>
             </article>
           </div>
@@ -160,7 +214,15 @@
             <h2 id="contact-title">Let’s work together.</h2>
             <p>Have a project or opportunity in mind? Send a message and I’ll get back to you.</p>
           </div>
-          <form class="contact-form" action="#" method="post">
+          <!--
+            Formspree setup:
+            1. Create a form at https://formspree.io and copy its form ID.
+            2. Replace YOUR_FORM_ID below with that ID (the action becomes
+               https://formspree.io/f/xxxxxxxx).
+            3. js/script.js submits this form via fetch() so the page never
+               redirects to Formspree; it just shows the status message below.
+          -->
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <div class="form-field">
               <label for="name">Name</label>
               <input id="name" name="name" type="text" autocomplete="name" required />
@@ -173,7 +235,15 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <button class="button" type="submit">Send message</button>
+
+            <!-- Honeypot field: hidden from people, catches simple spam bots. Formspree ignores real submissions where this stays empty. -->
+            <input type="text" name="_gotcha" class="form-field--honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <button class="button" type="submit">
+              <span class="button__label">Send message</span>
+            </button>
+
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </section>
