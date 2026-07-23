@@ -1560,3 +1560,54 @@ textarea:focus-visible,
 :root[data-theme="light"] .card-button--demo:hover {
   color: #ffffff;
 }
+
+/* ----- Certifications ----- */
+.certifications {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface-subtle);
+}
+
+.certifications__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.certificate-card {
+  position: relative;
+  min-height: 12rem;
+  padding: var(--space-3);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.certificate-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.75rem;
+  height: 2px;
+  background: var(--color-accent);
+  content: "";
+}
+
+.certificate-card__index {
+  display: block;
+  margin-bottom: var(--space-3);
+  color: var(--color-accent);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.certificate-card h3 {
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
+.certificate-card p {
+  margin-top: var(--space-2);
+  color: var(--color-muted);
+}
