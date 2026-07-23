@@ -69,6 +69,8 @@ Never commit API keys or secrets to this repository.
 
 The included `netlify.toml` already sets the publish directory and basic security headers.
 
+site to this repo: https://manvisharmaportfolio.netlify.app/
+
 ## Deploy to Vercel
 
 1. Push the project to GitHub.
