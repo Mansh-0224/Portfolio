@@ -55,11 +55,7 @@ For the best local testing experience, use a static server such as the VS Code L
 
 ## Configure the contact form
 
-The contact form is ready for Formspree, but needs a real endpoint before it can send messages.
-
-1. Create a form at [Formspree](https://formspree.io/).
-2. Copy its form ID.
-3. In `index.html`, replace `YOUR_FORM_ID` in the form action with that ID.
+The contact form is connected to [Formspree](https://formspree.io/) using Manvi's configured form endpoint. Formspree will deliver form submissions to the recipient address set in the Formspree dashboard.
 
 Never commit API keys or secrets to this repository.
 
